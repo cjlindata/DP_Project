@@ -1,1 +1,184 @@
-default
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survivor - Titanic Editon</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Survivor - Titanic Editon">
+  <meta name="author" content="James Lin">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Survivor - Titanic Editon</h1>
+    <h2>Data Product Presentation</h2>
+    <p>James Lin<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h3>Shiny App: Survivor - Titanic Edition</h3>
+  </hgroup>
+  <article data-timings="">
+    <h4>An infamous tragedy event.</h4>
+
+<p>On April 15, 1912, the RMS Tatanic sank after colloding with an iceberg at her maiden voyage. 1502 out of 2224 passengers and crew were killed in this tragedy. One of the reasons for such loss of life was that there were not enough lifeboats. </p>
+
+<h4>Well Known Data Science Competition Site.</h4>
+
+<p>Kaggle is a well known data science competitin site. Titanic: Machine Learning from Disaster is its &quot;getting started&quot; Competition for people who are new to Data Science. It has samll but highly structed data set. It is an idea case for a machine learining Shiny application runs on web server.</p>
+
+<h4>Motivation</h4>
+
+<p>I was looking for an interesting subject for data product shiny application project. At the meantime, I am exploring resource to enhance Data Science knowledge after JUH DS Courses. I discovered Kaggle and its &quot;getting Started&quot; competition page. The Kaggle Titanic data set provides an opportunity to find out who has bette chance to survive in this disaster.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>User Guide</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Your challenge is to compile a passenger profile who is likely to survive in this diaster. 
+You can ajust any passenger profile varilables in the sidebar to improve the passenger survive rate. Any of the variable change will trigger prediction engine to generate result. The result is display at the main panel with an image to present prediction result. A athentic Titanic lifesavor image for the survivor. A R.I.P (rest in peace) image indicts the tragedy ending the passenger. </p>
+
+<p>NOTE: We all know most of the survivors are women and children. Can you figure out how to constructor a survivor profile for male?</p>
+
+<h4>Passenger Profile</h4>
+
+<ul>
+<li>Gender </li>
+<li>Socio-economic status</li>
+<li>Age</li>
+<li>Number of Siblings/Spouses Aboard</li>
+<li>Number of Parents/Children Aboard</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Kaggle Titanic Data Set</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The data set is provided by Kaggle (<a href="https://www.kaggle.com/c/titanic/data">https://www.kaggle.com/c/titanic/data</a>).  </p>
+
+<h4>VARIABLE DESCRIPTIONS:</h4>
+
+<ul>
+<li>survival        Survival (0 = No; 1 = Yes)</li>
+<li>pclass          Passenger socio-economic status (1 = 1st; 2 = 2nd; 3 = 3rd)</li>
+<li>name            Name</li>
+<li>sex             Sex</li>
+<li>age             Age If the Age is Estimated, it is in the form xx.5</li>
+<li>sibsp           Number of Siblings/Spouses Aboard</li>
+<li>parch           Number of Parents/Children Aboard</li>
+<li>ticket          Ticket Number</li>
+<li>fare            Passenger Fare</li>
+<li>cabin          Cabin</li>
+<li>embarked       Port of Embarkation (C = Cherbourg; Q = Queenstown; S = Southampton)<br></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Survivor Prediction Model: Random forest</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Machine learning Algorithm RandomForest is chosen to predict passenger fate. Mean of Age is applied to the Age variable is null and only critical variables are selected to build the prediction model. The same variables are used as input variables in the Shiny applicatin sildbar to predict the result. </p>
+
+<h4>Sample Data</h4>
+
+<pre><code>##   PassengerId Survived Pclass                    Name  Sex Age SibSp Parch
+## 1           1        0      3 Braund, Mr. Owen Harris male  22     1     0
+##      Ticket Fare Cabin Embarked
+## 1 A/5 21171 7.25              S
+</code></pre>
+
+<h4>Model Performance</h4>
+
+<pre><code>##  Accuracy     Kappa 
+## 0.8288288 0.6295125
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Shiny App: Survivor - Titanic Edition'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='User Guide'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Kaggle Titanic Data Set'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Survivor Prediction Model: Random forest'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
